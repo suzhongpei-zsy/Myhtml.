@@ -44,7 +44,7 @@
             document.writeln('<br>' + s);
         }(1, 100);
 
-        var sum = function (start, end) {
+        var sum_while = function (start, end) {
             var s = 0;
             var i = start;;
             while (i <= end) {
@@ -56,16 +56,59 @@
             document.writeln('<br>' + s);
         }(1, 100);
 
-    var for_in=function(arr){
-        for(var each in arr){
-            document.writeln('<br>');
-            document.writeln("arr["+each+"]="+arr[each])
+        var for_in = function (arr) {
+            for (var each in arr) {
+                document.writeln('<br>');
+                document.writeln("arr[" + each + "]=" + arr[each])
+            }
+        }(new Array("a", "test", 1, 3.0, [1, 2, 3, 4]))
+
+        var static_person = {
+            name: "suzhongpei",
+            birth: 2000,
+            school: "zjszy",
+            height: 1.78,
+            weight: 70,
+            score: null
+
         }
-    }(new Array("a","test",1,3.0,[1,2,3,4]))
-    
-    
-    
-    
+
+        static_person.eat = function () {
+            alert("object can eat");
+        }
+
+        static_person.country = "china";
+        if ('weight' in static_person) {
+            document.writeln("<br> object have weight");
+        } else {
+            document.writeln('<br> object have not weight')
+        }
+
+        document.writeln('<br>');
+        document.writeln(static_person.name);
+        document.writeln(static_person.school);
+        document.writeln(static_person.country);
+        static_person.eat()
+
+        var person = new Object();
+        person.name = "suzhongpei";
+        person.eat = function () {
+            document.writeln('<br>')
+            document.writeln(person.name, " can eat ");
+        }
+
+        person.eat();
+
+        var function_person = function (name) {
+            this.name = name;
+            this.eat = function () {
+                document.writeln('<br>', name, " can eat");
+            }
+        }
+
+        p = new function_person("suzhongpei");
+        p.eat();
+
     </script>
 </body>
 
