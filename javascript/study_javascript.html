@@ -102,12 +102,21 @@
         var function_person = function (name) {
             this.name = name;
             this.eat = function () {
-                document.writeln('<br>', name, " can eat");
+                document.writeln('<br>', name, "    can eat");
             }
         }
 
         p = new function_person("suzhongpei");
         p.eat();
+
+        //map
+        var m=new Map([['suzhongpei',90],['zhangshan',79],['lishi',60]]);
+        document.writeln('<br>');
+        document.writeln(m.get('suzhongpei'));
+        m.delete('suzhongpei');
+        document.writeln('<br>');
+        document.writeln(m.get('suzhongpei'));
+
 
     </script>
 </body>
