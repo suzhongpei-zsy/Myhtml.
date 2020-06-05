@@ -8,7 +8,7 @@
 </head>
 <body ng-app="app">
     <div ng-controller="mainController">
-        {{name}}
+        <input type="text" ng-model="name">
         <button ng-click="say()">Welcome</button>
         <br>
         {{welcome}}
@@ -22,6 +22,8 @@
                 $scope.welcome="欢迎 欢迎"+$scope.name+"!"
             }
         })
+
+        var demo=angular.module('demo',['app']);
     </script>
 </body>
 </html>
